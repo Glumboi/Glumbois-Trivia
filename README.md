@@ -7,4 +7,4 @@
  - Answering it wrong with your last try will remove 2 points from your point pool
 
 # Resources
-[API used] https://opentdb.com/
+(API used) https://opentdb.com/
