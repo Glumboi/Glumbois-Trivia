@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Assets/quiz.ico</file>
+    </qresource>
+</RCC>
