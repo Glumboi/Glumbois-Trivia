@@ -1,6 +1,7 @@
 #include "triviagame.h"
 
-TriviaGame::TriviaGame(QLabel* _pointText,
+TriviaGame::TriviaGame(QLabel* _lastCorrectText,
+                       QLabel* _pointText,
                        QLabel* _skippedText,
                        QLabel* _correctText,
                        QPushButton* _verifyBtn,
@@ -8,6 +9,7 @@ TriviaGame::TriviaGame(QLabel* _pointText,
                        QTextEdit* _questionEdit,
                        QGroupBox* _genreBox)
 {
+    lastCorrectText = _lastCorrectText;
     pointText = _pointText;
     skippedText = _skippedText;
     correctText = _correctText;
@@ -112,10 +114,14 @@ void TriviaGame::ResetStats()
     points = 0;
     correctAnswers = 0;
     skippedQuestions = 0;
+    lastCorrect = "";
+
+    UpdateStats();
 }
 
 void TriviaGame::UpdateStats()
 {
+    lastCorrectText->setText(lastCorrect);
     pointText->setText(QString::number(points));
     skippedText->setText(QString::number(skippedQuestions));
     correctText->setText(QString::number(correctAnswers));
@@ -135,6 +141,7 @@ void TriviaGame::SkipCurrentQuestion(bool hasAnsweredCorrectly = false, uint8_t 
         points -= points > 0 ? punishmentAmount : 0;
     }
 
+    lastCorrect = correctAnswer;
     RefreshTrivia();
     UpdateStats();
 }
@@ -186,3 +193,22 @@ void TriviaGame::Verify()
 
     UpdateStats();
 }
+
+void TriviaGame::UppdateGenre(TriviaQuestionGenre& newGenre)
+{
+    triviaJsonUrl = "https://opentdb.com/api.php?amount=1" + newGenre.apiUrlExpansion;
+    RefreshTrivia();
+}
+
+TriviaGame::~TriviaGame()
+{
+    delete lastCorrectText;
+    delete pointText;
+    delete skippedText;
+    delete correctText;
+    delete answerList;
+    delete verifyBtn;
+    delete questionEdit;
+    delete genreBox;
+}
+

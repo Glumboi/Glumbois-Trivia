@@ -23,6 +23,8 @@ private slots:
 
     void on_pushButton_Reset_clicked();
 
+    void on_comboBox_Genre_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 };

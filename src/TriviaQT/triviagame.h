@@ -1,5 +1,6 @@
 #ifndef TRIVIAGAME_H
 #define TRIVIAGAME_H
+#include "triviaquestiongenre.h"
 #include <QString>
 #include <vector>
 #include <QNetworkAccessManager>
@@ -18,11 +19,13 @@
 #include <QListWidget>
 #include <QTextEdit>
 #include <QGroupBox>
+#include <QComboBox>
 
 class TriviaGame
 {
 public:
-    TriviaGame(QLabel* _pointText,
+    TriviaGame(QLabel* _lastCorrectText,
+               QLabel* _pointText,
                QLabel* _skippedText,
                QLabel* _correctText,
                QPushButton* _verifyBtn,
@@ -30,18 +33,23 @@ public:
                QTextEdit* _questionEdit,
                QGroupBox* _genreBox);
 
+    ~TriviaGame();
+
     void Load();
     void ResetStats();
     void UpdateStats();
     void SkipCurrentQuestion(bool hasAnsweredCorrectly, uint8_t punishmentAmount);
     void RefreshTrivia();
     void Verify();
+    void UppdateGenre(TriviaQuestionGenre& newGenre);
 
     QString question;
     QString category;
     QString difficulty;
     QString correctAnswer;
+    QString lastCorrect;
 
+    QLabel* lastCorrectText;
     QLabel* pointText;
     QLabel* skippedText;
     QLabel* correctText;
@@ -51,6 +59,7 @@ public:
     QTextEdit* questionEdit;
     QGroupBox* genreBox;
 
+    TriviaQuestionGenre* currentGenre;
     std::vector<QString> answers;
 
     int skippedQuestions = 0;

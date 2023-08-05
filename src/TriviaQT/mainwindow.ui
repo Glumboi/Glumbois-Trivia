@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>549</height>
+    <width>820</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -310,89 +310,64 @@ QMenuBar::item:selected
          <property name="title">
           <string>Stats</string>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QPushButton" name="pushButton_Reset">
-            <property name="text">
-             <string>Reset</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Points: </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_Points">
-            <property name="text">
-             <string>0</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="3">
            <widget class="QLabel" name="label_5">
             <property name="text">
              <string>Correctly answered:</string>
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QLabel" name="label_Correct">
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_Points">
             <property name="text">
              <string>0</string>
             </property>
            </widget>
           </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_LastCorrect">
+            <property name="text">
+             <string>Answer</string>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+           </widget>
           </item>
-          <item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Last correct answer:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
            <widget class="QLabel" name="label_3">
             <property name="text">
              <string>Skipped and wrongly answered Questions: </string>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Points: </string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" rowspan="2">
+           <widget class="QPushButton" name="pushButton_Reset">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_Correct">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
            <widget class="QLabel" name="label_Skipped">
             <property name="text">
              <string>0</string>
@@ -474,6 +449,23 @@ QMenuBar::item:selected
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>-1</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Genre</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_Genre"/>
+       </item>
       </layout>
      </widget>
     </item>
@@ -484,7 +476,7 @@ QMenuBar::item:selected
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>760</width>
+     <width>820</width>
      <height>40</height>
     </rect>
    </property>
