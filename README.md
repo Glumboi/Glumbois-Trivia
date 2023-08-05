@@ -8,3 +8,4 @@
 
 # Resources
 (API used) https://opentdb.com/
+(Stylesheet) https://github.com/githubuser0xFFFF/QtFluentDesign
