@@ -7,5 +7,5 @@
  - Answering it wrong with your last try will remove 2 points from your point pool
 
 # Resources
-(API used) https://opentdb.com/
-(Stylesheet) https://github.com/githubuser0xFFFF/QtFluentDesign
+ - (API used) https://opentdb.com/
+ - (Stylesheet) https://github.com/githubuser0xFFFF/QtFluentDesign
